@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
                     var myTextState by remember { mutableStateOf("Initial text:") }
                     MyTextField(myTextState) {myTextState=it}
                     */
-                    MyComposableButton()
+                    MyComposableImage()
 
 
                 }
