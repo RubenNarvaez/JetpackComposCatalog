@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JetpackComposCatalog</string>
+    <string name="check_box_text_1">Option number 1 of check Box 1:</string>
 </resources>

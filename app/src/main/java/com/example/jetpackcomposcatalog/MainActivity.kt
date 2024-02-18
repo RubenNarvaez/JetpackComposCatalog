@@ -27,7 +27,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.jetpackcomposcatalog.ui.theme.CheckInfo
 import com.example.jetpackcomposcatalog.ui.theme.JetpackComposCatalogTheme
+import kotlinx.coroutines.selects.select
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,22 +45,53 @@ class MainActivity : ComponentActivity() {
                     var myTextState by remember { mutableStateOf("Initial text:") }
                     MyTextField(myTextState) {myTextState=it}
                     */
-                    MyComposableImage()
 
+                    /*
+                    STATE HOISTING WITH MULTIPLE CHECKBOX
+                    //We create a state for the recomposition, because when we modify any checkBox
+                    var checkState by remember { mutableStateOf(false) }
+                    //Now we create an object to manage the changes
+                    val checkInfo = CheckInfo(
+                        tittle = "Example 1",
+                        selected = checkState,
+                        //onCheckedChange = {checkState = it},
+                        onCheckedChange = {myNewStatus -> checkState = myNewStatus})
+                    MultiCheckBox(checkInfo)*/
 
+                    /*Here we going to create our list of objects
+                    val myOptions = CheckBoxOptionsList(listOf("Pat", "Nat", "Alegry", "Martina"))
+                    Column {
+                        MyThreeStatusCheckBox()
+                        myOptions.forEach() {
+                            MultiCheckBox(it)
+                        }
+                    }
+                    */
+
+                    //Here we have the call for the radioButton
+                    //MyRadioButton()
+
+                    //MyRadioButtonList()
+                    Column {
+                        var selected by remember { mutableStateOf("Text RadioButton") }
+
+                        MyHoistingRadioButton(selected) {
+                            selected = it
+                        }
+                    }
                 }
             }
         }
     }
 }
 
+
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview(){
-    JetpackComposCatalogTheme {
-
-    }
+fun DefaultPreview() {
+    //MultiCheckBox (checkInfo = )
 }
+
 @Composable
 fun MyRow() {/*Row (Modifier.fillMaxSize(), horizontalArrangement = Arrangement.SpaceBetween){
         Text(text = "Example1")
