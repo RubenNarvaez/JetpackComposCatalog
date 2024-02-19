@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -29,6 +30,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposcatalog.ui.theme.CheckInfo
 import com.example.jetpackcomposcatalog.ui.theme.JetpackComposCatalogTheme
+import com.example.jetpackcomposcatalog.ui.theme.MyBadgeBox
+import com.example.jetpackcomposcatalog.ui.theme.MyCard
+import com.example.jetpackcomposcatalog.ui.theme.MyDivider
+import com.example.jetpackcomposcatalog.ui.theme.MyDropDownMenu
 import kotlinx.coroutines.selects.select
 
 class MainActivity : ComponentActivity() {
@@ -38,7 +43,10 @@ class MainActivity : ComponentActivity() {
             JetpackComposCatalogTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
+                    //desactivate when you use dropDownMenu
+                    //modifier = Modifier.fillMaxSize(),
+
+                    color = MaterialTheme.colorScheme.background
                 ) {
                     /*
                     //STATE HOISTING
@@ -71,7 +79,7 @@ class MainActivity : ComponentActivity() {
                     //Here we have the call for the radioButton
                     //MyRadioButton()
 
-                    //MyRadioButtonList()
+                    /*MyRadioButtonList()
                     Column {
                         var selected by remember { mutableStateOf("Text RadioButton") }
 
@@ -79,6 +87,8 @@ class MainActivity : ComponentActivity() {
                             selected = it
                         }
                     }
+                    */
+                    MyAdvanceSlider()
                 }
             }
         }
@@ -89,6 +99,10 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
+    Column(Modifier.fillMaxSize()) {
+        MyAdvanceSlider()
+    }
+
     //MultiCheckBox (checkInfo = )
 }
 
