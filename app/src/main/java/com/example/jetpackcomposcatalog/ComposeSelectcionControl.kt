@@ -40,7 +40,7 @@ fun MyHoistingRadioButton(name: String , onItemSelected:(String) -> Unit) {
               .fillMaxWidth()
             .background(Color.White)
     ) {
-        Row() {
+        Row(Modifier.padding(6.dp).align(Alignment.CenterHorizontally)) {
             //If I want to make work with more than 1 radioButton we have to do this code
             RadioButton(
                 selected = name == "Text RadioButton",
@@ -48,28 +48,28 @@ fun MyHoistingRadioButton(name: String , onItemSelected:(String) -> Unit) {
             Text(text = "Text RadioButton")
         }
 
-        Row() {
+        Row(Modifier.padding(6.dp).align(Alignment.CenterHorizontally)) {
             RadioButton(
                 selected = name == "Text RadioButton2",
                 onClick = {onItemSelected("Text RadioButton2")})
             Text(text = "Text RadioButton2")
         }
 
-        Row() {
+        Row(Modifier.padding(6.dp).align(Alignment.CenterHorizontally)) {
             RadioButton(
                 selected = name == "Text RadioButton3",
                 onClick = { onItemSelected("Text RadioButton3") })
             Text(text = "Text RadioButton3")
         }
 
-        Row() {
+        Row(Modifier.padding(6.dp).align(Alignment.CenterHorizontally)) {
             RadioButton(
                 selected = name == "Text RadioButton4",
                 onClick = {onItemSelected("Text RadioButton4")})
             Text(text = "Text RadioButton4")
         }
 
-        Row() {
+        Row(Modifier.padding(6.dp).align(Alignment.CenterHorizontally)) {
             RadioButton(
                 selected = name == "Text RadioButton5",
                 onClick = {onItemSelected("Text RadioButton5")})

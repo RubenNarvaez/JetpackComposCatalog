@@ -14,7 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Divider
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -28,13 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.jetpackcomposcatalog.ui.theme.CheckInfo
 import com.example.jetpackcomposcatalog.ui.theme.JetpackComposCatalogTheme
-import com.example.jetpackcomposcatalog.ui.theme.MyBadgeBox
-import com.example.jetpackcomposcatalog.ui.theme.MyCard
-import com.example.jetpackcomposcatalog.ui.theme.MyDivider
-import com.example.jetpackcomposcatalog.ui.theme.MyDropDownMenu
-import kotlinx.coroutines.selects.select
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,7 +82,26 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                     */
-                    MyAdvanceSlider()
+
+                    //For our ActiveAlertDialog we are going to add a button
+                    /*var show:Boolean by remember {mutableStateOf(false) }
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                        Button(onClick = { show = true }) {
+                            Text(text = "Show Alert Dialog")
+                            
+                        }
+                    }
+                    MyActiveAlertDialog(show = show, onDismiss = {show = false}, onConfirm = {show = true})
+                    */
+                    var show:Boolean by remember {mutableStateOf(false) }
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                        Button(onClick = { show = true }) {
+                            Text(text = "Show Alert Dialog")
+
+                        }
+                    }
+                    MyConfirmationDialog(show=show,
+                        onDismiss = { show = false})
                 }
             }
         }
@@ -100,7 +113,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     Column(Modifier.fillMaxSize()) {
-        MyAdvanceSlider()
+
     }
 
     //MultiCheckBox (checkInfo = )
