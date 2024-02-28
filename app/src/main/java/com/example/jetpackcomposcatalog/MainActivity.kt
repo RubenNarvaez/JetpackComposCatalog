@@ -93,6 +93,7 @@ class MainActivity : ComponentActivity() {
                     }
                     MyActiveAlertDialog(show = show, onDismiss = {show = false}, onConfirm = {show = true})
                     */
+                    /*
                     var show:Boolean by remember {mutableStateOf(false) }
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
                         Button(onClick = { show = true }) {
@@ -102,6 +103,8 @@ class MainActivity : ComponentActivity() {
                     }
                     MyConfirmationDialog(show=show,
                         onDismiss = { show = false})
+                                           */
+                    MyScaffoldExample()
                 }
             }
         }
