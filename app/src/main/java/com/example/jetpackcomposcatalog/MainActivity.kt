@@ -104,7 +104,7 @@ class MainActivity : ComponentActivity() {
                     MyConfirmationDialog(show=show,
                         onDismiss = { show = false})
                                            */
-                    MyScaffoldExample()
+                    MyCrossFadeAnimation()
                 }
             }
         }
